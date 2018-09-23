@@ -6,7 +6,20 @@
 <p>在桌面右下角状态栏中右键 docker 图标，修改在 Docker Daemon 标签页中的 json ，把下面的地址:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://f1361db2.m.daocloud.io</span><br></pre></td></tr></table></figure>
 <p>加到” <code>registry-mirrors</code>“的数组里。点击 Apply 。</p>
-<h2 id="Docker的基本概念"><a href="#Docker的基本概念" class="headerlink" title="Docker的基本概念"></a>Docker的基本概念</h2><h2 id="Docker实战"><a href="#Docker实战" class="headerlink" title="Docker实战"></a>Docker实战</h2><p>人人网前后端部署+WordPress等等</p>
+<h2 id="Docker的基本概念"><a href="#Docker的基本概念" class="headerlink" title="Docker的基本概念"></a>Docker的基本概念</h2><p>搜索镜像</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker search java</span><br></pre></td></tr></table></figure>
+<p>获取镜像</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull java</span><br></pre></td></tr></table></figure>
+<p>查看镜像</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
+<p>导出镜像</p>
+<p>PS：在windows平台需要在盘符根目录创建一个home的文件夹。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker save java &gt; /home/java.tar.gz</span><br><span class="line">docker save java -o /home/java.tar.gz</span><br></pre></td></tr></table></figure>
+<p>导入镜像</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker load &lt; /home/java.tar.gz</span><br><span class="line">docker load -i /home/java.tar.gz</span><br></pre></td></tr></table></figure>
+<p>删除镜像</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi java</span><br></pre></td></tr></table></figure>
+<h2 id="Docker实战"><a href="#Docker实战" class="headerlink" title="Docker实战"></a>Docker实战</h2><p>人人网前后端部署+WordPress等等</p>
 <p>现在先从最简单的开始，部署一个前后端的高可用项目。这是人人网开源的项目，质量是可以的，至少对于一个大学没毕业的我而言，还是有很多值得学习的地方，所以一开始拿这个作为实践是不错的选择。</p>
 <p>首先进入<a href="https://www.renren.io/" target="_blank" rel="noopener">https://www.renren.io/</a> 这个网址，下载人人的项目renren-fast。</p>
 <p><img src="/2018/09/23/DockerOne/00.png" alt=""></p>
@@ -15,7 +28,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE SCHEMA renren_fast;</span><br></pre></td></tr></table></figure>
 <p><img src="/2018/09/23/DockerOne/01.png" alt=""></p>
 <p>这样就成功导入了数据库的信息了。</p>
-<h2 id="微服务"><a href="#微服务" class="headerlink" title="微服务"></a>微服务</h2><h2 id="容器编排"><a href="#容器编排" class="headerlink" title="容器编排"></a>容器编排</h2><p>主要为k8s</p>
+<h2 id="搭建MySQL集群"><a href="#搭建MySQL集群" class="headerlink" title="搭建MySQL集群"></a>搭建MySQL集群</h2><h2 id="搭建Redis集群"><a href="#搭建Redis集群" class="headerlink" title="搭建Redis集群"></a>搭建Redis集群</h2><h2 id="项目部署"><a href="#项目部署" class="headerlink" title="项目部署"></a>项目部署</h2><h2 id="微服务"><a href="#微服务" class="headerlink" title="微服务"></a>微服务</h2><h2 id="容器编排"><a href="#容器编排" class="headerlink" title="容器编排"></a>容器编排</h2><p>主要为k8s</p>
 <h2 id="CICD和DevOps"><a href="#CICD和DevOps" class="headerlink" title="CICD和DevOps"></a>CICD和DevOps</h2><p>CICD为Jenkins+GitLab</p>
 <p>DevOps讲讲KVM，Python等等以后过度到OpenStack</p>
 <p>好了~这些就是近期的计划了~，可能果断时间会深入数据挖掘，但之前还是先把架构弄好，100w用户的网站。</p>
