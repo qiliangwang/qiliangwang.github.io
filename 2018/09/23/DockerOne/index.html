@@ -12,11 +12,10 @@
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull java</span><br></pre></td></tr></table></figure>
 <p>查看镜像</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
-<p>导出镜像</p>
-<p>PS：在windows平台需要在盘符根目录创建一个home的文件夹。</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker save java &gt; /home/java.tar.gz</span><br><span class="line">docker save java -o /home/java.tar.gz</span><br></pre></td></tr></table></figure>
+<p>导出镜像 PS：在windows平台需要在盘符根目录创建一个home的文件夹。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Liunx:   docker save java &gt; /home/java.tar.gz</span><br><span class="line">Windows: docker save java -o /home/java.tar</span><br></pre></td></tr></table></figure>
 <p>导入镜像</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker load &lt; /home/java.tar.gz</span><br><span class="line">docker load -i /home/java.tar.gz</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Linux:   docker load &lt; /home/java.tar.gz</span><br><span class="line">Windows: docker load -i /home/java.tar</span><br></pre></td></tr></table></figure>
 <p>删除镜像</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi java</span><br></pre></td></tr></table></figure>
 <h2 id="Docker实战"><a href="#Docker实战" class="headerlink" title="Docker实战"></a>Docker实战</h2><p>人人网前后端部署+WordPress等等</p>
