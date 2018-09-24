@@ -33,7 +33,7 @@
 <p>当然可以输入exit来退出。</p>
 <p>接下来怎么删除一个container，docker container rm id||name: 要是嫌弃docker container rm 太长就直接使用docker rm也是一样的！</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker container rm condescending_clarke</span><br><span class="line"></span><br><span class="line">docker container rm eb831c00873e</span><br></pre></td></tr></table></figure>
-<p>同理要想删除image就用，同理为了简写可以使用docker rmi</p>
+<p>同理要想删除image就用，同理为了方便可以使用docker rmi</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker image rm id||name:</span><br></pre></td></tr></table></figure>
 <p>要是容器太多想一次性清除</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker rm $(docker container ls -aq)</span><br><span class="line">docker container ls -f <span class="string">"status=exited"</span> -q</span><br></pre></td></tr></table></figure>
@@ -46,7 +46,9 @@
 <p>LABEL</p>
 <p>RUN</p>
 <p>WORKDIR</p>
-<h3 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h3><h3 id="存储"><a href="#存储" class="headerlink" title="存储"></a>存储</h3><h2 id="Docker实战"><a href="#Docker实战" class="headerlink" title="Docker实战"></a>Docker实战</h2><p>人人网前后端部署+WordPress等等</p>
+<p>ADD || COPY：ADD除了COPY还会解压</p>
+<p>ENV</p>
+<h4 id="简单的Dockerfile实践"><a href="#简单的Dockerfile实践" class="headerlink" title="简单的Dockerfile实践"></a>简单的Dockerfile实践</h4><h3 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h3><h3 id="存储"><a href="#存储" class="headerlink" title="存储"></a>存储</h3><h2 id="Docker实战"><a href="#Docker实战" class="headerlink" title="Docker实战"></a>Docker实战</h2><p>人人网前后端部署+WordPress等等</p>
 <p>现在先从最简单的开始，部署一个前后端的高可用项目。这是人人网开源的项目，质量是可以的，至少对于一个大学没毕业的我而言，还是有很多值得学习的地方，所以一开始拿这个作为实践是不错的选择。</p>
 <p>首先进入<a href="https://www.renren.io/" target="_blank" rel="noopener">https://www.renren.io/</a> 这个网址，下载人人的项目renren-fast。</p>
 <p><img src="/2018/09/23/DockerOne/00.png" alt=""></p>
