@@ -28,7 +28,7 @@ hdfs-"><meta name="keywords"><meta content="width=device-width, initial-scale=1.
 <p>在zookeeper的文件目录下添加文件，因为之前我们输入的是server.1所以在这个文件中，我们写入1</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /tmp/zookeeper/myid</span><br></pre></td></tr></table></figure>
 <p>启动zookeeper</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zookeeper/bin$ ./zkServer.sh</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zookeeper/bin$ ./zkServer.sh start</span><br></pre></td></tr></table></figure>
 <p>清空Hadoop和HBase</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd hadoop/etc/hadoop </span><br><span class="line">vim hdfs-site.xml</span><br></pre></td></tr></table></figure>
 <p>清空dfs.namenode.name.dir和dfs.datanode.data.dir</p>
